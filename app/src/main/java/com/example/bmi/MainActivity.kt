@@ -28,22 +28,26 @@ class MainActivity : AppCompatActivity() {
             val weight:Double = editTextWeight.text.toString().toDouble()
             val height:Double = editTextHeight.text.toString().toDouble()
 
-            val bmi:Double = weight / ((height / 1000)* (height / 1000))
+            val bmi:Double = weight / (((height / 1000)* (height / 1000)))
+
+            imageViewProfile = findViewById(R.id.imageViewProfile)
 
             if( bmi < 0 ) {
-                //imageViewProfile.setImageResource(R.drawable.empty)
+                imageViewProfile.setImageResource(R.drawable.empty)
             }else if(bmi < 18.5){
 
-                //imageViewProfile.setImageResource(R.drawable.under)
+                imageViewProfile.setImageResource(R.drawable.under)
             }else if (bmi > 25){
 
-                //imageViewProfile.setImageResource(R.drawable.over)
+                imageViewProfile.setImageResource(R.drawable.over)
             }else{
 
-                //imageViewProfile.setImageResource(R.drawable.normal)
+                imageViewProfile.setImageResource(R.drawable.normal)
             }
 
-            textViewBMI.setText()
+            textViewBMI = findViewById(R.id.textViewBMI)
+
+            textViewBMI.setText(bmi.toString())
         }
     }
 }
