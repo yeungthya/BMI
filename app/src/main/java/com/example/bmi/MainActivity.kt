@@ -51,5 +51,19 @@ class MainActivity : AppCompatActivity() {
 
             textViewBMI.setText(bmi.toString())
         }
+
+        val buttonReset = findViewById(R.id.buttonReset) as Button
+
+        buttonReset.setOnClickListener{
+            editTextHeight = findViewById(R.id.editTextHeight)
+            editTextWeight = findViewById(R.id.editTextWeight)
+            imageViewProfile = findViewById(R.id.imageViewProfile)
+            textViewBMI = findViewById(R.id.textViewBMI)
+            editTextHeight.setText("")
+            editTextWeight.setText("")
+            imageViewProfile.setImageResource(R.drawable.empty)
+            textViewBMI.setText("BMI :")
+
+        }
     }
 }
