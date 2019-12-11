@@ -26,9 +26,10 @@ class MainActivity : AppCompatActivity() {
             editTextWeight = findViewById(R.id.editTextWeight)
 
             val weight:Double = editTextWeight.text.toString().toDouble()
-            val height:Double = editTextHeight.text.toString().toDouble()
+            var height:Double = editTextHeight.text.toString().toDouble()
+            height = height/1000
 
-            val bmi:Double = weight / (((height / 1000)* (height / 1000)))
+            val bmi:Double = weight / (height*height)
 
             imageViewProfile = findViewById(R.id.imageViewProfile)
 
